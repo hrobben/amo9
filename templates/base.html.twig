@@ -43,7 +43,11 @@
                         <li><a href="#" class="text-white">Like on Facebook</a></li>
                         <li><a href="#" class="text-white">Email me</a></li>
                         <li><a href="{{ path('blog_index') }}" class="text-white">Blogs</a></li>
-                        <li><a href="{{ path('app_login') }}" class="text-white">Login</a></li>
+                        {% if app.user %}
+                            <li><a href="{{ path('app_logout') }}" class="text-white">Logout</a></li>
+                        {% else %}
+                            <li><a href="{{ path('app_login') }}" class="text-white">Login</a></li>
+                        {% endif %}
                         <li><a href="{{ path('app_register') }}" class="text-white">Register</a></li>
                     </ul>
                 </div>
